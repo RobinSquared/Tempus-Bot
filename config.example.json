@@ -1,0 +1,5 @@
+{
+  "token": "YOUR_BOT_TOKEN_HERE",
+  "client_id": "YOUR_CLIENT_ID_HERE",
+  "guild_id": "OPTIONAL_GUILD_ID"
+}
