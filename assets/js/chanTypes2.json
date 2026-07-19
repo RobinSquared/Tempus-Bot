@@ -1,0 +1,50 @@
+{
+    "0": {
+        "name": "Guild Text",
+        "number": "0"
+    },
+    "1": {
+        "name": "DM",
+        "number": "1"
+    },
+    "2": {
+        "name": "Guild Voice",
+        "number": "2"
+    },
+    "3": {
+        "name": "Group DM",
+        "number": "3"
+    },
+    "4": {
+        "name": "Guild Category",
+        "number": "4"
+    },
+    "5": {
+        "name": "Guild Announcement",
+        "number": "5"
+    },
+    "10": {
+        "name": "Announcement",
+        "number": "10"
+    },
+    "11": {
+        "name": "Public Thread",
+        "number": "11"
+    },
+    "12": {
+        "name": "Private Thread",
+        "number": "12"
+    },
+    "13": {
+        "name": "Guild Stage Voice",
+        "number": "13"
+    },
+    "14": {
+        "name": "Guild Directory",
+        "number": "14"
+    },
+    "15": {
+        "name": "Guild Forum",
+        "number": "15"
+    }
+}

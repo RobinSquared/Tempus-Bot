@@ -69,10 +69,12 @@ module.exports = {
         const difficulty = interaction.options.getString('difficulty');
 
         if(difficulty === "help") {
-            const embed = new EmbedBuilder()
-                embed.setDescription("# Difficulty Help\n## Easy\nWill show just the picture of the pokemon to guess, the form will not be required.\n\n## Normal\nThe default option, will show the picture of the pokemon to guess, the form however will be required in the guess.\n\n## Hard\nWill show the pokemons pokedex description. The form will not be required.")
+            const container = new ContainerBuilder();
+            container.addTextDisplayComponents(
+                new TextDisplayBuilder().setContent("## 🎮 Difficulty Help\n\n**Easy** — shows the image only and does not require a form.\n\n**Normal** — shows the image and requires the guess to include the form if relevant.\n\n**Hard** — reveals the Pokédex description while keeping the answer hidden.")
+            );
 
-            interaction.reply({ embeds: [embed] })
+            interaction.reply({ flags: MessageFlags.IsComponentsV2, components: [container] })
             return;
         }
 
@@ -249,7 +251,7 @@ module.exports = {
                     if(diff === "hard") {
                         const titleDisplay = new TextDisplayBuilder()
                         titleDisplay.setContent(
-                            "# WHO'S THAT POKEMON\n!guess {pokemon} to guess\n\n"+pookedex
+                            "## 🎯 WHO'S THAT POKEMON\n\n**Guess:** `!guess {pokemon}`\n\n"+pookedex
                         )
                         console.log("Text Display Built")
                         container.addTextDisplayComponents(titleDisplay);
@@ -283,13 +285,13 @@ module.exports = {
                         //embed.setImage("https://assets.pokemon.com/assets/cms2/img/pokedex/full/"+imgNum+".png")
                         if(forms === true) {
                             titleDisplay.setContent(
-                                "# WHO'S THAT POKEMON?\n!guess {pokemon}-{form} to guess",
+                                "## 🎯 WHO'S THAT POKEMON?\n\n**Guess:** `!guess {pokemon}-{form}`",
                             )
                             console.log("Text Display Built")
                             //embed.setDescription("# WHO'S THAT POKEMON?\n!guess {pokemon}-{form} to guess")
                         } else {
                             titleDisplay.setContent(
-                                "# WHO'S THAT POKEMON\n!guess {pokemon} to guess",
+                                "## 🎯 WHO'S THAT POKEMON\n\n**Guess:** `!guess {pokemon}`",
                             )
                             console.log("Text Display Built")
                             //embed.setDescription("# WHO'S THAT POKEMON\n!guess {pokemon} to guess")
@@ -350,7 +352,7 @@ module.exports = {
                             const titleDisplay = new TextDisplayBuilder()
                             const descriptionDisplay = new TextDisplayBuilder()
                             titleDisplay.setContent(
-                                "# CORRECT, "+collected.first().member.displayName+"\nThe answer was "+pokeName+"\n",
+                                "## ✅ Correct!\n\n**Player:** "+collected.first().member.displayName+"\n**Answer:** "+pokeName+"",
                             )
                             const seperator = new SeparatorBuilder({
                                 spacing: SeparatorSpacingSize.Large,
@@ -387,7 +389,7 @@ module.exports = {
                             const container2 = new ContainerBuilder()
                             const titleDisplay2 = new TextDisplayBuilder()
                             titleDisplay2.setContent(
-                                "🎉🎉 Congratulations "+collected.first().member.displayName+" you got it right! 🎉🎉\n\nThe answer was "+pokeName,
+                                "## 🎉 Congratulations!\n\n**Player:** "+collected.first().member.displayName+"\n**Answer:** "+pokeName,
                             )
                             container2.addTextDisplayComponents(titleDisplay2)
                             container2.addSeparatorComponents(seperator)
@@ -403,7 +405,7 @@ module.exports = {
                             const titleDisplay = new TextDisplayBuilder()
                             const descriptionDisplay = new TextDisplayBuilder()
                             titleDisplay.setContent(
-                                "# TIMED OUT\nThe answer was "+pokeName+"\n",
+                                "## ⏰ Time's Up!\n\n**Answer:** "+pokeName,
                             )
 
                             const mediaGallery = new MediaGalleryBuilder({
@@ -431,7 +433,7 @@ module.exports = {
                             const container2 = new ContainerBuilder()
                             const titleDisplay2 = new TextDisplayBuilder()
                             titleDisplay2.setContent(
-                                "The answer was "+pokeName+" you're all wrong",
+                                "## 😅 No one got it\n\n**Answer:** "+pokeName,
                             )
                             container2.addTextDisplayComponents(titleDisplay2)
                             container2.addTextDisplayComponents(descriptionDisplay)

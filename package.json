@@ -12,7 +12,9 @@
   "dependencies": {
     "@napi-rs/canvas": "^1.0.2",
     "discord.js": "^14.27.0",
+    "dismondb": "^4.0.5",
     "ms": "^2.1.3",
+    "owospeak": "^1.0.4",
     "pokedex-promise-v2": "^4.2.3"
   },
   "devDependencies": {

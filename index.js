@@ -10,7 +10,8 @@ const client = new Client({
         GatewayIntentBits.MessageContent,
         GatewayIntentBits.GuildMembers,
         GatewayIntentBits.GuildMessageReactions,
-        GatewayIntentBits.GuildPresences
+        GatewayIntentBits.GuildPresences,
+		GatewayIntentBits.GuildModeration
     ]
 });
 
