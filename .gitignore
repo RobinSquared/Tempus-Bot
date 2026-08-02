@@ -1,4 +1,5 @@
 node_modules/
+Legacy/
 .env
 .env.local
 .env.*.local
