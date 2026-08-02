@@ -9,6 +9,7 @@ const TYPE_COLORS = {
     rock: '#B6A136', ghost: '#735797', dark: '#705746', dragon: '#6F35FC', steel: '#B7B7CE', fairy: '#D685AD'
 };
 
+// AI-assisted: legacy embed response was converted to generated image output.
 module.exports = {
     cooldown: 5,
     data: new SlashCommandBuilder()
@@ -154,7 +155,7 @@ function contrastColor(hex) {
     return yiq >= 128 ? '#000000' : '#ffffff';
 }
 
-// autocomplete for types
+// AI-assisted: autocomplete for type names.
 module.exports.autocomplete = async (interaction) => {
     const focused = interaction.options.getFocused().toLowerCase();
     const types = Object.keys(TYPE_COLORS);

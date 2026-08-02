@@ -17,6 +17,7 @@ module.exports = {
             .setAutocomplete(true)
         ),
     async execute(interaction) {
+        // AI-assisted: dynamic import keeps pokedex-promise-v2 working from CommonJS command files.
         const { default: Pokedex } = await import('pokedex-promise-v2');
         const P = new Pokedex();
 
@@ -308,6 +309,7 @@ module.exports = {
             // noop
         }
         if (!_pokemonListCache) {
+            // AI-assisted: dynamic import keeps pokedex-promise-v2 working from CommonJS command files.
             const { default: Pokedex } = await import('pokedex-promise-v2');
             const P = new Pokedex();
             try {

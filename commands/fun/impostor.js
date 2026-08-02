@@ -1,6 +1,7 @@
 const { SlashCommandBuilder, AttachmentBuilder } = require('discord.js');
 const { createCanvas, loadImage } = require('@napi-rs/canvas');
 
+// AI-assisted: legacy embed response was converted to generated image output.
 module.exports = {
     data: new SlashCommandBuilder()
         .setName('impostor')

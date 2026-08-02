@@ -1,6 +1,7 @@
 const { EmbedBuilder, Permissions, SlashCommandBuilder, ContainerBuilder, TextDisplayBuilder, MediaGalleryBuilder, MessageFlags, SeparatorBuilder, SeparatorSpacingSize } = require('discord.js');
 const ms = require("ms");
 
+// AI-assisted: legacy embed responses were converted to Discord components.
 module.exports = {
 	data: new SlashCommandBuilder()
 		.setName('wtp')
@@ -52,6 +53,7 @@ module.exports = {
             )
         ),
 	async execute(interaction) {
+        // AI-assisted: dynamic import keeps pokedex-promise-v2 working from CommonJS command files.
         const { default: Pokedex } = await import('pokedex-promise-v2');
         const P = new Pokedex();
 

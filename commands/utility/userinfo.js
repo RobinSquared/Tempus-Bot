@@ -1,5 +1,6 @@
 const { SlashCommandBuilder, ContainerBuilder, TextDisplayBuilder, MediaGalleryBuilder, MessageFlags, SeparatorBuilder, SeparatorSpacingSize } = require('discord.js')
 
+// AI-assisted: legacy embed response was converted to Discord components.
 module.exports = {
     cooldown: 5,
     data: new SlashCommandBuilder()

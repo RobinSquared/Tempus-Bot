@@ -1,6 +1,7 @@
 const { SlashCommandBuilder, ContainerBuilder, TextDisplayBuilder, MessageFlags } = require('discord.js')
 const owospeak = require("owospeak");
 
+// AI-assisted: legacy embed response was converted to Discord components.
 module.exports = {
 	data: new SlashCommandBuilder()
 		.setName('owoify')
